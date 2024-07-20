@@ -8,6 +8,6 @@ def post_list(request):
     return render(request, 'blogapp/post/list.html', {'posts':posts})
 
 
-def post_detail(request, id):
-    post = get_object_or_404(Post, id=id, status=Post.Status.PUBLISHED)
+def post_detail(request, id, post):
+    post = get_object_or_404(Post, id=id, status=Post.Status.PUBLISHED, slug=post)
     return render(request, 'blogapp/post/detail.html', {'post':post})
