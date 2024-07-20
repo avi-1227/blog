@@ -4,20 +4,23 @@
 
 {% block content %}
 
-
 {% for post in posts %}
-<h2>
-    <a href="{{post.get_absolute_url}}">
-        {{post.title}}
-    </a>
-</h2>
-<p class="date">
-    Published {{post.publish}} by {{post.author}}
-</p>
-<p>
-    {{post.body|truncatewords:30|linebreaks}}
-</p>
+<div class="blog-post">
+    <h3 class="blog-post-title">
+        <a href="{{post.get_absolute_url}}">
+            {{post.title}}
+        </a>
+    </h3>
+    <p class="blog-post-meta">{{post.publish}} by <a href="#">{{post.author}}</a></p>
+    <p>{{post.body|truncatewords:30|linebreaks}}</p>
 
+</div>
 {% endfor %}
+
+
+
+
+
+
 
 {% endblock %}

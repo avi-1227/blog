@@ -1,36 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html,
 body {
-    scroll-behavior: smooth;
-
     display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
-header {
-    border: 1px solid black;
-    height: 100vh;
-    width: 210px;
+.container-fluid {
+    flex: 1;
 }
 
-a {
-    text-decoration: none;
-}
 
-#sidebar {
-    margin-left: 12px;
-    margin-top: 12px;
-
-}
-
-#content {
-    margin-left: 12px;
-    margin-top: 12px;
-}
 
 .date {
     color: burlywood;
