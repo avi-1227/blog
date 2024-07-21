@@ -13,7 +13,11 @@ def post_list(request):
 
 def post_detail(request, id, post):
     post = get_object_or_404(Post, id=id, status=Post.Status.PUBLISHED, slug=post)
-    return render(request, 'blogapp/post/detail.html', {'post':post})
+    # List of active comments for this post
+    comments = post.comments.filter(active=True)
+    # Form for users to comment
+    form = CommentForm()
+    return render(request, 'blogapp/post/detail.html', {'post':post, 'comments':coments, 'form':form})
 
 
 def post_share(request, post_id):
